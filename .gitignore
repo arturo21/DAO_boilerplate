@@ -1,5 +1,6 @@
 node_modules
 artifacts
+deployments/
 cache
 *.old
 typechain-types
