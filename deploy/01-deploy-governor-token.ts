@@ -7,16 +7,16 @@ const deployGovernanceToken: DeployFunction = async function (hre: HardhatRuntim
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
     log("Deploying Governance Token...");
-    const govenarnceToken = await deploy("GovernanceToken", {
+    const governanceToken = await deploy("GovernanceToken", {
         from: deployer,
         args: [],
         log: true,
         // waitConfirmations: 1
     });
     //verify
-    log(`Deployed governance token to address ${govenarnceToken.address}`);
+    log(`Deployed governance token to address ${governanceToken.address}`);
 
-    await delegate(govenarnceToken.address, deployer);
+    await delegate(governanceToken.address, deployer);
     log("Delegated");
 };
 
